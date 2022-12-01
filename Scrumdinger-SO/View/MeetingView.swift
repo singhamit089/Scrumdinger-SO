@@ -11,7 +11,7 @@ struct MeetingView: View {
     var body: some View {
         VStack {
             ProgressView(value: 5,total: 15)
-            HStack(alignment: .bottom, content: {
+            HStack {
                 VStack(alignment: .leading) {
                     Text("Seconds Elapsed")
                         .font(.caption)
@@ -21,9 +21,12 @@ struct MeetingView: View {
                 VStack(alignment: .trailing) {
                     Text("Seconds Remaining")
                         .font(.caption)
-                    Label("300", systemImage: "hourglass.tophalf.fill")
+                    Label("600", systemImage: "hourglass.tophalf.fill")
                 }
-            })
+            }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("time remaining")
+            .accessibilityValue("10 minutes")
             Circle()
                 .strokeBorder(lineWidth: 24)
             HStack {
@@ -32,6 +35,7 @@ struct MeetingView: View {
                 Button(action: {}) {
                     Image(systemName: "forward.fill")
                 }
+                .accessibilityLabel("Next speaker")
             }
         }
         .padding()
