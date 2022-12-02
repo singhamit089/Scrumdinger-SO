@@ -22,15 +22,11 @@ enum Theme: String {
     
     var accentColor: Color  {
         switch self {
-        case .orange, .teal, .yellow: return .black
-        case .indigo, .purple: return .white
-        case .red, .green, .mint, .cyan, .blue, .pink: return .gray
+        case .orange,.mint, .teal, .yellow: return .black
+        case .indigo, .purple, .red, .green, .cyan, .blue, .pink: return .white
         }
     }
     var mainColor: Color {
-        print("-------------------------")
-        print("\(self.rawValue)")
-        print("-------------------------")
         return Color.init(self.rawValue)
     }
     var colorValue: Color {
@@ -58,5 +54,8 @@ enum Theme: String {
         case .yellow:
             return Color.yellow
         }
+    }
+    var name: String {
+        rawValue.capitalized
     }
 }
