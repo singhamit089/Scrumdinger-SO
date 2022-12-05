@@ -51,4 +51,10 @@ extension DailyScrum {
         DailyScrum(title: "iOS Dev", attendees: ["Amit", "Jake", "Olivia", "Eden J", "John C", "Adam", "Aga", "Cam"], lengthInMinutes: 5, theme: .yellow),
         DailyScrum(title: "Android Dev", attendees: ["Norman", "Rahul", "Tom", "Sam J", "Tan C", "Vazir", "Don", "Cam"], lengthInMinutes: 5, theme: .red)
     ]
+    mutating func update(from data: Data) {
+        self.title = data.title
+        self.attendees = data.attendees
+        self.lengthInMinutes = Int(data.lengthInMinutes)
+        self.theme = data.theme
+    }
 }
