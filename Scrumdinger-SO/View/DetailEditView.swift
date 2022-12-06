@@ -31,7 +31,10 @@ struct DetailEditView: View {
                 .accessibilityValue("\(Int(data.lengthInMinutes)) minutes")
                 
                 NavigationLink(destination: ThemePicker(selection: $data.theme)) {
-                    Label("Theme", systemImage: "paintpalette")
+                    HStack {
+                        Label("Theme", systemImage: "paintpalette")
+                        ThemeView(theme: data.theme)
+                    }
                 }
             }
             Section(header: Text("Attendees")) {
