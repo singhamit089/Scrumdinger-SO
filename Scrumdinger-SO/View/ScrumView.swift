@@ -22,7 +22,6 @@ struct ScrumView: View {
         .navigationTitle("Daily Scrums")
         .toolbar {
             Button {
-                print("---- plus -----")
             } label: {
                 Image(systemName: "plus")
             }

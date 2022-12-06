@@ -29,7 +29,10 @@ struct DetailEditView: View {
                 .accessibilityElement(children: .combine)
                 .accessibilityLabel("Length of the scrum")
                 .accessibilityValue("\(Int(data.lengthInMinutes)) minutes")
-                ThemePicker(selection: $data.theme)
+                
+                NavigationLink(destination: ThemePicker(selection: $data.theme)) {
+                    Label("Theme", systemImage: "paintpalette")
+                }
             }
             Section(header: Text("Attendees")) {
                 ForEach(data.attendees) { attendee in
