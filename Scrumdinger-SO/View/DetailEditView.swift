@@ -33,7 +33,10 @@ struct DetailEditView: View {
                 NavigationLink(destination: ThemePicker(selection: $data.theme)) {
                     HStack {
                         Label("Theme", systemImage: "paintpalette")
-                        ThemeView(theme: data.theme)
+                        Spacer()
+                            .padding(.horizontal)
+                            .frame(height: 20)
+                            .background(data.theme.colorValue)
                     }
                 }
             }
